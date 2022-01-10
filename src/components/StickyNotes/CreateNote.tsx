@@ -11,11 +11,13 @@ interface CreateNoteProps {
 
 export default function CreateNote({ onComplete }: CreateNoteProps) {
     const editableRef = useRef<HTMLDivElement>(null);
+    const [processing, setProcessing] = useState<boolean>(false);
     const [createNoteError, setCreateNoteError] = useState<ErrorType | null>(null);
     const { state } = useStore();
     const user = state?.user;
     async function createNoteHandler() {
         try {
+            setProcessing(true);
             await createNote({
                 description: editableRef.current?.innerHTML as string,
                 createdBy: {
@@ -24,9 +26,11 @@ export default function CreateNote({ onComplete }: CreateNoteProps) {
                 },
             });
             toast.success(`${user?.lastName}, Note has been created.`);
-            setTimeout(() => onComplete('success'), 400);
+            onComplete('success');
         } catch (e: any) {
             setCreateNoteError(JSON.parse(e.message));
+        } finally {
+            setProcessing(false);
         }
     }
 
@@ -40,10 +44,15 @@ export default function CreateNote({ onComplete }: CreateNoteProps) {
                 <Editable ref={editableRef} className="create-note__body-editable" />
             </div>
             <div className="create-note__actions">
-                <button type="submit" className="button" onClick={() => onComplete('dismissed')}>
+                <button
+                    type="submit"
+                    className="button"
+                    onClick={() => onComplete('dismissed')}
+                    disabled={processing}
+                >
                     Cancel
                 </button>
-                <button type="submit" className="button button--primary">
+                <button type="submit" className="button" disabled={processing}>
                     Save
                 </button>
             </div>

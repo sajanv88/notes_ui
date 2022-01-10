@@ -37,7 +37,7 @@ export default function Layout({ children }: LayoutProps) {
                     </p>
                     <p>
                         You can activate your account on your
-                        <Link to="/app/account_settings" className="link link--inline">
+                        <Link to="/account_settings" className="link link--inline">
                             Account Settings
                         </Link>
                         page.
