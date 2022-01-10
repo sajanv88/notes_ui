@@ -1,0 +1,19 @@
+.editable {
+    font-size: 2.4rem;
+    margin: 1.8rem 0 2.4rem 0;
+
+    padding: 1.2rem;
+    resize: vertical;
+    overflow-y: scroll;
+    border: 1px solid colors.$black;
+
+    &--off {
+        line-height: 1.49;
+        word-wrap: break-word;
+        white-space: pre-line;
+        max-height: 90%;
+        overflow-y: auto;
+        resize: none;
+        border: none;
+    }
+}

@@ -1,0 +1,15 @@
+.form-text-field {
+    margin: 1.2rem;
+    font-size: 1.8rem;
+
+    display: flex;
+    flex-direction: column;
+    &__show-label {
+        text-transform: capitalize;
+        padding: 1.2rem 0;
+        font-weight: 500;
+    }
+    input {
+        padding: 1.2rem;
+    }
+}

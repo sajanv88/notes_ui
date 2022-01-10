@@ -1,0 +1,28 @@
+.create-account {
+    @include mixins.useFlex(column);
+    height: calc(100vh - 5rem);
+    &__error {
+        @include mixins.useError();
+    }
+    &__body {
+        background: colors.$grey-1;
+        box-shadow: 0px 0px 1rem lighten(colors.$black, 80%);
+    }
+    &__grid {
+        display: grid;
+        @include responsive.respond-to(sm) {
+            grid-template-columns: 1fr 1fr;
+            .form-text-field:nth-child(3),
+            .form-text-field:nth-child(4) {
+                grid-column: 1/4;
+            }
+        }
+    }
+    &__form-actions {
+        padding: 1.8rem 0;
+        @include mixins.useFlex(column);
+        .link {
+            padding-top: 1.2rem;
+        }
+    }
+}

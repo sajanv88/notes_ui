@@ -1,0 +1,38 @@
+.button {
+    padding: 1rem 1.2rem;
+    font-size: 1.8rem;
+    transition: all 200ms ease;
+    @include responsive.respond-to(sm) {
+        padding: 1.2rem 1.8rem;
+    }
+    &:hover {
+        background: colors.$grey-3;
+    }
+
+    &--small {
+        padding: 0.6rem 1.2rem;
+        font-weight: 300;
+    }
+
+    &--primary {
+        background: colors.$green-5;
+        color: colors.$white;
+        border: 1px solid colors.$grey-7;
+
+        &:hover {
+            background: colors.$green-3;
+            color: colors.$grey-7;
+        }
+    }
+
+    &--danger {
+        background: colors.$red-1;
+        color: colors.$black;
+        border: 1px solid colors.$grey-7;
+
+        &:hover {
+            background: colors.$red-5;
+            color: colors.$white;
+        }
+    }
+}

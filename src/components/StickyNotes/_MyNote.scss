@@ -1,0 +1,31 @@
+.my-note {
+    background: colors.$grey-1;
+    padding: 1.2rem;
+    box-shadow: 0 8px 8px -4px colors.$grey-5;
+    @include mixins.useFlex(column, flex-start, flex-start);
+    &__header {
+        align-self: flex-end;
+        .button:not(.button:last-child) {
+            margin-right: 0.6rem;
+        }
+    }
+
+    &__body {
+        flex: 1;
+        width: 100%;
+    }
+
+    &__footer {
+        align-self: flex-end;
+        &-owner-name {
+            background: colors.$grey-3;
+            color: colors.$black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.6rem 2.4rem;
+            border-radius: 20rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.49;
+        }
+    }
+}

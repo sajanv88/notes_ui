@@ -1,0 +1,4 @@
+.page-not-found {
+    @include mixins.useFlex(column);
+    height: calc(100vh - 10rem);
+}

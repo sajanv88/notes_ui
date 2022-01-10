@@ -1,0 +1,19 @@
+.nav-bar {
+    background: colors.$grey-1;
+    padding: 1.2rem 1.8rem;
+    &__fixed-container {
+        display: grid;
+        width: 100%;
+        z-index: 1;
+        grid-template-columns: 1fr 1fr;
+        h1 {
+            flex: 1;
+        }
+    }
+
+    &__detail {
+        justify-self: end;
+        position: relative;
+        align-self: center;
+    }
+}

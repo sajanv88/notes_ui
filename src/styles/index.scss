@@ -1,0 +1,52 @@
+@use 'responsive';
+@use 'colors';
+@use 'mixins';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.26;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.link {
+    display: block;
+    margin-top: 1.2rem 0.6rem;
+    font-size: 1.8rem;
+    color: colors.$black;
+    padding: 0 0.6rem;
+    &--inline {
+        display: inline-block;
+        color: colors.$white;
+    }
+}
+
+// third party css
+@import 'react-toastify/dist/ReactToastify.css';
+
+@import './button';
+@import './avatar';
+@import './select-box';
+
+@import '../components/Form/Form';
+@import '../components/Form/FormTextField';
+@import '../components/Login/Login';
+@import '../components/CreateAccount/CreateAccount';
+@import '../components/NavBar/NavBar';
+@import '../components/ContextMenu/ContextMenu';
+@import '../components//PageNotFound/PageNotFound';
+@import '../components/StickyNotes/StickyNotes';
+@import '../components/StickyNotes/MyNote';
+@import '../components/Modal/Modal';
+@import '../components/StickyNotes/CreateNote';
+@import '../components/Editable/Editable';
+@import '../components/AccountSettings/AccountSettings';
+@import '../components/Layout/Layout';

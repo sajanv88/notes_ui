@@ -1,0 +1,80 @@
+.account-settings {
+    width: 100%;
+    border: 1px solid colors.$grey-7;
+    padding: 2.4rem;
+    @include responsive.respond-to(sm) {
+        width: 70%;
+        margin: 2.4rem auto;
+    }
+
+    @include responsive.respond-to(lg) {
+        width: 50%;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+        margin: 1.2rem;
+        border-bottom: 1px solid colors.$grey-7;
+        padding-bottom: 1.2rem;
+    }
+    .form {
+        width: 100%;
+        padding: 0;
+    }
+
+    &__status {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        @include responsive.respond-to(md) {
+            grid-template-columns: auto;
+            h3 {
+                grid-column: 1/2;
+            }
+
+            fieldset {
+                @include mixins.useFlex(row);
+                border: none;
+            }
+            &-deactivate,
+            &-delete {
+                input {
+                    margin: 0;
+                }
+                @include mixins.useFlex(row, center, center);
+                font-size: 1.2rem;
+                font-weight: 700;
+                label {
+                    margin-left: 0.6rem;
+                }
+            }
+            &-deactivate {
+                margin-right: 1.8rem;
+                color: colors.$orange-3;
+                text-transform: capitalize;
+            }
+            &-delete {
+                color: colors.$red-5;
+            }
+        }
+    }
+
+    &__update-password-error {
+        @include mixins.useError();
+        text-align: center;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1.2rem;
+        .button:not(.button:last-child) {
+            margin-right: 1.2rem;
+        }
+    }
+
+    .link {
+        text-align: center;
+    }
+}

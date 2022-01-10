@@ -1,0 +1,17 @@
+@use 'colors';
+
+@mixin useFlex($direction, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin useError() {
+    color: colors.$red-5;
+    font-size: 1.2rem;
+}
+@mixin useWarning() {
+    color: colors.$orange-5;
+    font-size: 1.8rem;
+}

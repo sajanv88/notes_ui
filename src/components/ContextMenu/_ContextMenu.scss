@@ -1,0 +1,24 @@
+.context-menu {
+    position: absolute;
+    z-index: 9999;
+    right: 1rem;
+    background: colors.$grey-1;
+    box-shadow: 0px 1px 1rem rgba(colors.$grey-7, 18%);
+    top: 5.5rem;
+    border-radius: 5%;
+    min-width: 30rem;
+    &__menus {
+        width: 100%;
+        @include mixins.useFlex(column);
+        align-items: flex-start;
+        margin: 0.6rem 0 0.6rem 0;
+        .button {
+            margin: 0.6rem;
+            width: 95%;
+            border: none;
+            &:not(&:last-child) {
+                border-bottom: 1px solid colors.$grey-5;
+            }
+        }
+    }
+}

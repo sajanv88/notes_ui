@@ -1,0 +1,21 @@
+.avatar {
+    display: flex;
+    padding: 2.4rem;
+    border-radius: 3rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: colors.$grey-7;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: colors.$white;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}

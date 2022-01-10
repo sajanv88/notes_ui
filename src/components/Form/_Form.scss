@@ -1,0 +1,8 @@
+.form {
+    padding: 1.8rem;
+
+    width: 100%;
+    @include responsive.respond-to(sm) {
+        width: 50rem;
+    }
+}

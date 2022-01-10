@@ -1,0 +1,25 @@
+.layout {
+    &--loading-state {
+        font-size: 1.8rem;
+        @include mixins.useFlex(column);
+        height: calc(100vh - 5rem);
+    }
+    &__warning {
+        @include mixins.useWarning();
+        width: 100%;
+        @include responsive.respond-to(sm) {
+            width: 70%;
+            margin: 2.4rem auto;
+        }
+
+        @include responsive.respond-to(lg) {
+            width: 50%;
+        }
+        background: colors.$black;
+        padding: 2.4rem;
+        p {
+            line-height: 1.49;
+            margin: 0.6rem 0 0.6rem 0;
+        }
+    }
+}

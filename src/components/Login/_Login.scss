@@ -1,0 +1,18 @@
+.login {
+    @include mixins.useFlex(column);
+    height: calc(100vh - 5rem);
+    &__body {
+        background: colors.$grey-1;
+        box-shadow: 0px 0px 1rem lighten(colors.$black, 80%);
+    }
+    &__error {
+        @include mixins.useError();
+    }
+    &__form-actions {
+        padding: 1.8rem 0;
+        @include mixins.useFlex(column);
+        .link {
+            padding-top: 1.2rem;
+        }
+    }
+}

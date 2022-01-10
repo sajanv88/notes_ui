@@ -1,0 +1,30 @@
+// break points
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin respond-to($media) {
+    @if $media == sm {
+        @media (min-width: $sm) {
+            @content;
+        }
+    } @else if $media == md {
+        @media (min-width: $md) {
+            @content;
+        }
+    } @else if $media == lg {
+        @media (min-width: $lg) {
+            @content;
+        }
+    } @else if $media == xl {
+        @media (min-width: $xl) {
+            @content;
+        }
+    } @else if $media == xxl {
+        @media (min-width: $xxl) {
+            @content;
+        }
+    }
+}
