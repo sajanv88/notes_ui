@@ -16,18 +16,26 @@ export default function MyNote({ note, onDeleteEvent }: MyNoteProps) {
         setEdit((edit) => !edit);
 
         if (event.currentTarget.textContent?.toLowerCase() === 'save') {
-            await updateNote(note._id, {
-                description: descriptionRef.current?.innerHTML as string,
-                userId: note.createdBy.userId,
-            });
-            toast.success('Note has been updated.');
+            try {
+                await updateNote(note._id, {
+                    description: descriptionRef.current?.innerHTML as string,
+                    userId: note.createdBy.userId,
+                });
+                toast.success('Note has been updated.');
+            } catch (e) {
+                console.error(e);
+            }
         }
     }
 
     async function onDeleteEventHandler() {
-        await deleteNote(note._id);
-        toast.success('Note has been deleted.');
-        onDeleteEvent(note._id);
+        try {
+            await deleteNote(note._id);
+            toast.success('Note has been deleted.');
+            onDeleteEvent(note._id);
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (

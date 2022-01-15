@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Form from '../Form/Form';
 import FormTextField, { FormTextFieldType } from '../Form/FormTextField';
 import { makeAccountCreationRequest } from '../../service/api';
@@ -12,11 +12,16 @@ export default function CreateAccount() {
         { name: 'emailAddress', type: FormTextFieldType.EMAIL },
         { name: 'password', type: FormTextFieldType.PASSWORD },
     ];
-    const { makeRequestWithPayload } = useAccount();
-
+    const { makeRequestWithPayload, processing } = useAccount();
+    const navgiate = useNavigate();
     async function createAccountHandler(payload: Record<string, string>) {
-        await makeRequestWithPayload(payload, makeAccountCreationRequest);
-        toast.success(`Welcome ${payload.lastName}`);
+        try {
+            await makeRequestWithPayload(payload, makeAccountCreationRequest);
+            toast.success(`Welcome ${payload.lastName}`);
+            navgiate('/sign_in');
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
@@ -32,12 +37,14 @@ export default function CreateAccount() {
                     ))}
                 </div>
                 <div className="create-account__form-actions">
-                    <button type="submit" className="button">
+                    <button type="submit" className="button" disabled={processing}>
                         Create Account
                     </button>
-                    <Link to="/sign_in" className="link">
-                        Already Have an Account?
-                    </Link>
+                    {!processing && (
+                        <Link to="/sign_in" className="link">
+                            Already Have an Account?
+                        </Link>
+                    )}
                 </div>
             </Form>
         </div>

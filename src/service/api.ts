@@ -145,6 +145,7 @@ export const updateNote = async (noteId: string, payload: UpdateNote) => {
         const error = e as ErrorType;
         const err = JSON.parse(error.message);
         toast.error(err.message)
+        throw e;
     }
 }
 
@@ -158,5 +159,6 @@ export const deleteNote = async (noteId: string) => {
         const error = e as ErrorType;
         const err = JSON.parse(error.message);
         toast.error(err.message)
+        throw e;
     }
 }

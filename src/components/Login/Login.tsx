@@ -9,7 +9,7 @@ export default function Login() {
         { name: 'emailAddress', type: FormTextFieldType.EMAIL },
         { name: 'password', type: FormTextFieldType.PASSWORD },
     ];
-    const { makeRequestWithPayload } = useAccount();
+    const { makeRequestWithPayload, processing } = useAccount();
 
     async function loginHandler(payload: Record<string, string>) {
         const response: Record<string, string> = (await makeRequestWithPayload(
@@ -29,12 +29,14 @@ export default function Login() {
                     <FormTextField type={type} name={name} key={index} showLabel required />
                 ))}
                 <div className="login__form-actions">
-                    <button type="submit" className="button">
+                    <button type="submit" className="button" disabled={processing}>
                         Login
                     </button>
-                    <Link to="/sign_up" className="link">
-                        Create Account?
-                    </Link>
+                    {!processing && (
+                        <Link to="/sign_up" className="link">
+                            Create Account?
+                        </Link>
+                    )}
                 </div>
             </Form>
         </div>
