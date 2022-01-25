@@ -29,6 +29,15 @@ body {
     }
 }
 
+.app {
+    &--error {
+        background-color: colors.$red-5;
+        color: colors.$white;
+        font-size: 2.4rem;
+        padding: 1.2rem;
+    }
+}
+
 // third party css
 @import 'react-toastify/dist/ReactToastify.css';
 

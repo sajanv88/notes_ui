@@ -42,7 +42,7 @@
         }
     }
 
-    &__draggable-area {
+    &__grid-area {
         padding: 1.8rem;
         display: grid;
         @include responsive.respond-to(md) {

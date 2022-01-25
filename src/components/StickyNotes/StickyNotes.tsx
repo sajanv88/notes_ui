@@ -96,7 +96,7 @@ export default function StickyNotes() {
                     <div className="sticky-notes__no-record-found">No Record Found</div>
                 )}
 
-                <div className="sticky-notes__draggable-area">
+                <div className="sticky-notes__grid-area">
                     {notes?.list.map((note) => (
                         <MyNote
                             note={note}
