@@ -54,7 +54,7 @@
         }
 
         @include responsive.respond-to(xl) {
-            max-width: 100rem;
+            max-width: 125rem;
             margin: 0 auto;
         }
 
