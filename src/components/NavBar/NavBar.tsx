@@ -30,7 +30,7 @@ export default function NavBar() {
     return (
         <header className="nav-bar">
             <div className="nav-bar__fixed-container">
-                <h1>Sticky Notes</h1>
+                <h1>Notes</h1>
                 {isLoggedIn && (
                     <div className="nav-bar__detail">
                         <span className="avatar" onClick={() => setShowContextMenu(true)}>
