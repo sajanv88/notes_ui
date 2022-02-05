@@ -53,6 +53,11 @@
             grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
         }
 
+        @include responsive.respond-to(xl) {
+            max-width: 100rem;
+            margin: 0 auto;
+        }
+
         grid-gap: 0.6rem;
     }
 
